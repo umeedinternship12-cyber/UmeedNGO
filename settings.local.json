@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\Diwak\\\\OneDrive\\\\Umeed a drop of Hope\\\\\" -Force | ForEach-Object { $_.Name })"
+    ]
+  }
+}
