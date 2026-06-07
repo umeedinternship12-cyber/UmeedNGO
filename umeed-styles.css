@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    DESIGN TOKENS
    ========================================================= */
 :root {
@@ -981,15 +981,45 @@ p { text-wrap: pretty; }
 .social-icon--twitter:hover   { box-shadow: 0 8px 22px rgba(80,80,80,0.5); }
 .footer__bottom {
   margin-top: var(--space-l);
-  padding-top: var(--space-s);
-  border-top: 1px solid rgba(245,239,230,0.1);
+  padding: var(--space-m) 0 var(--space-xs);
+  border-top: 1px solid rgba(245,239,230,0.12);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   font-size: var(--step--1);
-  opacity: 0.52;
   gap: var(--space-s);
+}
+.footer__bottom > span {
+  color: rgba(245,239,230,0.42);
+  letter-spacing: 0.015em;
+}
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+.footer__legal a {
+  color: rgba(245,239,230,0.48);
+  text-decoration: none;
+  padding: 0.2em 0.8em;
+  letter-spacing: 0.015em;
+  position: relative;
+  transition: color 0.22s;
+}
+.footer__legal a + a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 0.8em;
+  background: rgba(245,239,230,0.18);
+}
+.footer__legal a:hover {
+  color: var(--marigold);
 }
 
 /* =========================================================
@@ -1028,7 +1058,8 @@ p { text-wrap: pretty; }
 
   /* Footer */
   .footer__grid { gap: var(--space-m); }
-  .footer__bottom { flex-direction: column; text-align: center; gap: var(--space-2xs); }
+  .footer__bottom { flex-direction: column; text-align: center; gap: var(--space-2xs); align-items: center; }
+  .footer__legal { justify-content: center; }
   .footer__socials { flex-wrap: wrap; gap: 0.45rem; }
   .social-icon { width: 36px; height: 36px; }
   .social-icon svg { width: 17px; height: 17px; }
