@@ -1,0 +1,196 @@
+/* Policy page layout */
+.policy-hero {
+  background: var(--ink);
+  color: var(--paper);
+  padding: calc(5rem + var(--space-2xl)) 0 var(--space-2xl);
+  position: relative;
+  overflow: hidden;
+}
+.policy-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--terracotta), var(--marigold), var(--terracotta));
+}
+.policy-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 60px;
+  background: var(--paper);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.policy-hero__tag {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--marigold);
+  margin: 0 0 var(--space-s);
+  font-weight: 500;
+}
+.policy-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--step-5);
+  font-weight: 700;
+  margin: 0 0 var(--space-s);
+  line-height: 1.1;
+}
+.policy-hero__updated {
+  font-size: var(--step--1);
+  color: rgba(245,239,230,0.5);
+  margin: 0;
+  max-width: 38rem;
+}
+
+/* Policy body */
+.policy-body {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-s) var(--space-3xl);
+}
+.policy-body--wide {
+  max-width: 60rem;
+}
+.policy-body h2 {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 600;
+  margin: var(--space-xl) 0 var(--space-s);
+  color: var(--ink);
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--line);
+}
+.policy-body h2:first-of-type {
+  margin-top: var(--space-l);
+}
+.policy-body p {
+  line-height: 1.85;
+  color: var(--ink-soft);
+  margin: 0 0 var(--space-s);
+}
+.policy-body a {
+  color: var(--terracotta);
+  text-decoration: none;
+  font-weight: 500;
+}
+.policy-body a:hover {
+  text-decoration: underline;
+}
+.policy-body ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0 0 var(--space-s);
+}
+.policy-body ul li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+.policy-body ul li::before {
+  content: '—';
+  color: var(--terracotta);
+  flex-shrink: 0;
+  margin-top: 0.05em;
+  font-weight: 600;
+}
+.policy-commitment {
+  font-size: var(--step-1);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--forest);
+  border-left: 3px solid var(--forest);
+  padding-left: var(--space-m);
+  margin-bottom: var(--space-l);
+  line-height: 1.7;
+}
+
+/* Annual reports grid */
+.reports-grid {
+  display: grid;
+  gap: var(--space-m);
+  margin: var(--space-l) 0;
+}
+.report-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-m);
+  padding: var(--space-m) var(--space-l);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  background: var(--paper-warm);
+  transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
+}
+.report-card:hover {
+  border-color: var(--terracotta);
+  box-shadow: 0 6px 24px rgba(200,84,31,0.1);
+  transform: translateY(-2px);
+}
+.report-card__year {
+  display: inline-block;
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--terracotta);
+  background: rgba(200,84,31,0.08);
+  padding: 0.2em 0.6em;
+  border-radius: var(--radius-s);
+  margin-bottom: 0.5rem;
+}
+.report-card__title {
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+}
+.report-card__desc {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.6;
+}
+.report-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65em 1.3em;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  border-radius: var(--radius-s);
+  font-size: var(--step--1);
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+.report-card__btn svg {
+  width: 15px; height: 15px;
+}
+.report-card__btn:hover {
+  background: var(--terracotta);
+}
+.reports-note {
+  margin-top: var(--space-l);
+  padding: var(--space-m);
+  background: rgba(200,84,31,0.06);
+  border-radius: var(--radius-m);
+  border-left: 3px solid var(--terracotta);
+}
+.reports-note p {
+  margin: 0;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+@media (max-width: 600px) {
+  .policy-hero__title { font-size: var(--step-4); }
+  .report-card { flex-direction: column; align-items: flex-start; }
+  .report-card__btn { width: 100%; justify-content: center; }
+}
